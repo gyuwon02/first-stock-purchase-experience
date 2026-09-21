@@ -1,2 +1,5 @@
-# first-stock-purchase-experience
-Research-driven redesign project for first-time stock purchase experience.
+# 투자 경험이 적은 사용자의 첫 국내주식 매수 경험 분석 및 개선
+
+주요 증권 플랫폼에서 첫 국내주식 매수 과업을 조사·비교하고, 사용자 관점의 개선 기회를 검증하는 금융 서비스 기획 포트폴리오 프로젝트입니다.
+
+현재 진행 상태: 조사 설계 및 자료 수집 준비 단계
