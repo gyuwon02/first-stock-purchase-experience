@@ -2,31 +2,31 @@
 
 ## 1. 모바일 투자 환경의 확대
 
-### Evidence
+### 근거
 - 조사 내용
 - 수치
 - 출처
 
-### Project Implication
-이 자료가 프로젝트 기획에 어떤 의미를 갖는지
+### 프로젝트 시사점
+이 자료가 프로젝트 기획에 주는 시사점
 
 
 ## 2. 디지털 금융 이해 수준
 
-### Evidence
+### 근거
 
-### Project Implication
+### 프로젝트 시사점
 
 
 ## 3. 증권 플랫폼의 UX 경쟁
 
-### Evidence
+### 근거
 
-### Project Implication
+### 프로젝트 시사점
 
 
 ## 4. 초보 투자자를 위한 정보 제공
 
-### Evidence
+### 근거
 
-### Project Implication
+### 프로젝트 시사점
