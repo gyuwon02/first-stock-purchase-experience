@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<link as="style" crossorigin="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@300..600,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    body {
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      overscroll-behavior: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .pb-safe {
+      padding-bottom: max(12px, env(safe-area-inset-bottom, 12px));
+    }
+    .pt-safe {
+      padding-top: max(8px, env(safe-area-inset-top, 0px));
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-white text-[#191f28] flex flex-col min-h-screen selection:bg-[#e0e7ff] selection:text-[#1e3a8a]">
+<!-- 1. HEADER: Minimal, Centered / Calm Branding -->
+<header class="fixed top-0 w-full z-40 bg-white border-b border-[#f1f3f5] pt-safe">
+<div class="h-12 px-4 flex items-center justify-between">
+<button aria-label="뒤로 가기" class="w-9 h-9 -ml-1 flex items-center justify-center text-[#333d4b] active:opacity-60 transition-opacity" onclick="history.back()">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<div class="flex items-center gap-1.5">
+<span class="text-[16px] font-bold text-[#191f28]">삼성전자</span>
+<span class="text-[12px] text-[#6b7684] font-medium tracking-normal">005930</span>
+</div>
+<button aria-label="관심종목 등록" class="w-9 h-9 -mr-1 flex items-center justify-center text-[#6b7684] hover:text-[#191f28] transition-colors">
+<span class="material-symbols-outlined text-[22px]">star</span>
+</button>
+</div>
+</header>
+<!-- MAIN SCROLL AREA -->
+<main class="flex-1 w-full pt-[calc(48px+env(safe-area-inset-top,0px))] pb-28">
+<!-- 2. STOCK SUMMARY: Calm, dignified, spacious -->
+<section class="px-5 pt-6 pb-5 bg-white">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-[13px] font-medium text-[#6b7684]">005930 · 코스피</span>
+</div>
+<button class="inline-flex items-center gap-1 text-[12.5px] font-medium text-[#6b7684] hover:text-[#333d4b]">
+<span class="material-symbols-outlined text-[15px]">notifications_none</span>
+          알림
+        </button>
+</div>
+<div class="mt-2.5 flex items-baseline gap-2">
+<span class="text-[26px] font-bold text-[#191f28] leading-tight">70,000<span class="text-[18px] font-semibold ml-0.5">원</span></span>
+<div class="flex items-center text-[15px] font-semibold text-[#c83737]">
+<span class="material-symbols-outlined text-[16px] mr-0.5" style="font-variation-settings: 'FILL' 1;">arrow_drop_up</span>
+<span class="">800원</span>
+<span class="ml-1 text-[14px] font-medium">(+1.16%)</span>
+</div>
+</div>
+<div class="mt-1.5 flex items-center gap-2 text-[12px] text-[#8b95a1]">
+<span class="">전일대비 +1.16%</span>
+<span class="w-0.5 h-0.5 rounded-full bg-[#cbd5e1]"></span>
+<span class="">15:30 정규장 마감</span>
+</div>
+<div class="mt-5 pt-3.5 pb-0.5 border-t border-[#f4f5f7] flex items-center justify-between text-[13px]">
+<div class="flex items-center gap-1.5">
+<span class="text-[#8b95a1] font-normal text-[12px]">전일</span>
+<span class="text-[#333d4b] font-semibold text-[13.5px]">69,200</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-[#8b95a1] font-normal text-[12px]">시가</span>
+<span class="text-[#c83737] font-semibold text-[13.5px]">69,500</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-[#8b95a1] font-normal text-[12px]">고가</span>
+<span class="text-[#c83737] font-semibold text-[13.5px]">70,300</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-[#8b95a1] font-normal text-[12px]">저가</span>
+<span class="text-[#2b6cb0] font-semibold text-[13.5px]">69,100</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-[#8b95a1] font-normal text-[12px]">거래량</span>
+<span class="text-[#333d4b] font-semibold text-[13.5px]">11.4M</span>
+</div>
+</div>
+</section>
+<!-- 3. TAB NAVIGATION -->
+<nav aria-label="주식 탭" class="flex items-center px-5 border-b border-[#eceef2] bg-white text-[15px]">
+<button class="relative py-3 mr-6 font-semibold text-[#172554] flex flex-col items-center">
+<span class="">차트</span>
+<span class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#172554] rounded-full"></span>
+</button>
+<button class="py-3 mr-6 font-normal text-[#6b7684] hover:text-[#191f28] transition-colors">
+        호가
+      </button>
+<button class="py-3 mr-6 font-normal text-[#6b7684] hover:text-[#191f28] transition-colors">
+        정보
+      </button>
+<button class="py-3 font-normal text-[#6b7684] hover:text-[#191f28] transition-colors">
+        기업정보
+      </button>
+</nav>
+<!-- 4. CONTEMPORARY MINIMAL CHART -->
+<section class="px-5 pt-6 pb-6 bg-white border-t border-[#f4f5f7]">
+<div class="relative w-full h-48">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 360 160">
+<defs>
+<lineargradient id="restrainedArea" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#c83737" stop-opacity="0.08"></stop>
+<stop offset="100%" stop-color="#c83737" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<line stroke="#eceef2" stroke-dasharray="2 3" stroke-width="1" x1="0" x2="360" y1="120" y2="120"></line>
+<path d="M 0,120 L 0,105 C 30,108 55,96 85,90 C 115,84 140,110 170,108 C 200,106 225,58 260,52 C 290,46 325,56 360,58 L 360,160 L 0,160 Z" fill="url(#restrainedArea)"></path>
+<path d="M 0,105 C 30,108 55,96 85,90 C 115,84 140,110 170,108 C 200,106 225,58 260,52 C 290,46 325,56 360,58" fill="none" stroke="#c83737" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></path>
+<circle cx="360" cy="58" fill="#c83737" r="3.5"></circle>
+</svg>
+<div class="absolute right-0 top-10 flex items-center bg-white border border-[#f1f3f5] shadow-sm rounded px-1.5 py-0.5 text-[12px] text-[#6b7684]">
+<span class="font-semibold text-[#c83737]">70,000</span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-[13px] pt-3 border-t border-[#f4f5f7]" id="chart-filter-row">
+<button class="py-1 px-2.5 rounded text-[#172554] bg-[#f0f4fa] font-semibold text-[13px]">1일</button>
+<button class="py-1 px-2.5 rounded text-[#6b7684] hover:text-[#191f28] font-normal text-[13px]">1주</button>
+<button class="py-1 px-2.5 rounded text-[#6b7684] hover:text-[#191f28] font-normal text-[13px]">3개월</button>
+<button class="py-1 px-2.5 rounded text-[#6b7684] hover:text-[#191f28] font-normal text-[13px]">1년</button>
+<button class="py-1 px-2.5 rounded text-[#6b7684] hover:text-[#191f28] font-normal text-[13px]">3년</button>
+<button class="py-1 px-2.5 rounded text-[#6b7684] hover:text-[#191f28] font-normal text-[13px]">전체</button>
+</div>
+</section>
+<!-- 5. FIRST-PURCHASE GUIDE: Calm, dignified inline guidance -->
+<section class="mx-5 my-6" id="guide-box"><div class="bg-[#f0f4fa] border border-[#dce2f7] rounded-lg p-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-[#1e3a8a]">lightbulb</span>
+<h2 class="text-[14.5px] font-semibold text-[#172554]">처음 구매자를 위한 정보 안내</h2>
+</div>
+<button aria-label="가이드 닫기" class="inline-flex items-center gap-0.5 text-[12px] text-[#6b7684] hover:text-[#191f28] p-1 -mr-1 -mt-1" onclick="document.getElementById('guide-box').style.display='none'">
+<span>안내 종료</span>
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<p class="text-[13px] text-[#4e5968] mt-1.5 leading-relaxed">각 정보 영역이 무엇을 의미하는지 가볍게 둘러보세요.</p>
+</div></section>
+<!-- 6. INFORMATION SECTIONS: Clean vertical hierarchy, subtle 1px dividers -->
+<!-- Section 1: 최근 가격 변화 -->
+<section class="px-5 py-6 border-t border-[#f1f3f5] bg-white">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-[17px] font-bold text-[#191f28]">최근 가격 변화</h2>
+</div><div class="mb-3 px-3 py-2 bg-[#f3f6fb] rounded flex items-center gap-1.5 text-[12.5px] text-[#475569]">
+<span class="material-symbols-outlined text-[15px] text-[#1e3a8a]">info</span>
+<span>최근 가격이 어떻게 움직였는지 확인할 수 있어요.</span>
+</div>
+<div class="flex flex-col divide-y divide-[#f8f9fa] text-[14px]">
+<div class="py-3 flex items-center justify-between">
+<span class="text-[#4e5968] font-medium text-[14px]">1주일</span>
+<span class="font-semibold text-[#c83737] text-[14.5px]">+2.19%</span>
+</div>
+<div class="py-3 flex items-center justify-between">
+<span class="text-[#4e5968] font-medium text-[14px]">1개월</span>
+<span class="font-semibold text-[#2b6cb0] text-[14.5px]">-1.41%</span>
+</div>
+<div class="py-3 flex items-center justify-between">
+<span class="text-[#4e5968] font-medium text-[14px]">3개월</span>
+<span class="font-semibold text-[#c83737] text-[14.5px]">+4.48%</span>
+</div>
+<div class="py-3 flex items-center justify-between">
+<span class="text-[#4e5968] font-medium text-[14px]">52주 최고 / 최저</span>
+<div class="text-[13.5px] text-[#333d4b]">
+<span class="font-semibold text-[#c83737]">79,800원</span>
+<span class="mx-1 text-[#d1d5db]">/</span>
+<span class="font-semibold text-[#2b6cb0]">55,300원</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: 최근 정보 -->
+<section class="px-5 py-6 border-t border-[#f1f3f5] bg-white">
+<div class="flex items-center justify-between mb-3.5">
+<h2 class="text-[17px] font-bold text-[#191f28]">최근 정보</h2>
+<button class="text-[13px] font-medium text-[#6b7684] hover:text-[#191f28] flex items-center">
+          더보기
+          <span class="material-symbols-outlined text-[15px] ml-0.5">chevron_right</span>
+</button>
+</div><div class="mb-3 px-3 py-2 bg-[#f3f6fb] rounded flex items-center gap-1.5 text-[12.5px] text-[#475569]">
+<span class="material-symbols-outlined text-[15px] text-[#1e3a8a]">info</span>
+<span>기업과 관련된 최근 소식과 주요 정보를 확인할 수 있어요.</span>
+</div>
+<div class="flex flex-col divide-y divide-[#f8f9fa]">
+<a class="py-3.5 block group" href="javascript:void(0)">
+<div class="text-[14.5px] font-medium text-[#191f28] group-hover:text-[#1e3a8a] line-clamp-1 leading-relaxed">
+            삼성전자, 차세대 AI 반도체 HBM3E 양산 로드맵 발표
+          </div>
+<div class="mt-1.5 text-[12px] text-[#8b95a1]">
+            한국경제 · 2시간 전
+          </div>
+</a>
+<a class="py-3.5 block group" href="javascript:void(0)">
+<div class="text-[14.5px] font-medium text-[#191f28] group-hover:text-[#1e3a8a] line-clamp-1 leading-relaxed">
+<span class="text-[#1e3a8a] font-semibold mr-1">[공시]</span>최대주주등소유주식변동신고서
+          </div>
+<div class="mt-1.5 text-[12px] text-[#8b95a1]">
+            금융감독원 DART · 5시간 전
+          </div>
+</a>
+<a class="py-3.5 block group" href="javascript:void(0)">
+<div class="text-[14.5px] font-medium text-[#191f28] group-hover:text-[#1e3a8a] line-clamp-1 leading-relaxed">
+            외국인 및 기관 순매수 3일 연속 유입세 지속
+          </div>
+<div class="mt-1.5 text-[12px] text-[#8b95a1]">
+            연합인포맥스 · 오늘
+          </div>
+</a>
+</div>
+</section>
+<!-- Section 3: 기업 정보 -->
+<section class="px-5 py-6 border-t border-[#f1f3f5] bg-white">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-[17px] font-bold text-[#191f28]">기업 정보</h2>
+<button class="text-[13px] font-medium text-[#6b7684] hover:text-[#191f28] flex items-center">
+          더보기
+          <span class="material-symbols-outlined text-[15px] ml-0.5">chevron_right</span>
+</button>
+</div><div class="mb-3 px-3 py-2 bg-[#f3f6fb] rounded flex items-center gap-1.5 text-[12.5px] text-[#475569]">
+<span class="material-symbols-outlined text-[15px] text-[#1e3a8a]">info</span>
+<span>기업의 기본 정보와 실적 등을 확인할 수 있어요.</span>
+</div>
+<div class="grid grid-cols-2 gap-y-4 gap-x-5 text-[13.5px]">
+<div class="flex flex-col">
+<span class="text-[#8b95a1] text-[12px]">시가총액</span>
+<span class="mt-1 text-[#191f28] font-semibold text-[14px]">417조 8,847억원</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[#8b95a1] text-[12px]">PER / PBR</span>
+<span class="mt-1 text-[#191f28] font-semibold text-[14px]">14.82배 / 1.18배</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[#8b95a1] text-[12px]">배당수익률</span>
+<span class="mt-1 text-[#191f28] font-semibold text-[14px]">2.06% (연 1,444원)</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[#8b95a1] text-[12px]">외국인 소진율</span>
+<span class="mt-1 text-[#191f28] font-semibold text-[14px]">53.42%</span>
+</div>
+</div>
+</section>
+</main>
+<!-- 7. BOTTOM ACTION CTA: Single Confident Purchase Button in Navy Blue -->
+<aside class="fixed bottom-0 w-full z-40 bg-white border-t border-[#f1f3f5] pb-safe shadow-[0_-4px_12px_rgba(0,0,0,0.03)]">
+<div class="px-5 py-2.5">
+<button class="w-full h-12 bg-[#172554] active:bg-[#1e3a8a] text-white rounded-md text-[16px] font-semibold tracking-tight transition-colors flex items-center justify-center">
+        구매하기
+      </button>
+</div>
+</aside>
+</body></html>
